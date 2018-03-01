@@ -36,8 +36,8 @@ public class SendActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.send_activity);
         button = (Button) findViewById(R.id.buttonSend);
-        // Add your mail Id and Password
-        sender = new GMailSender("eg8625@gmail.com", "Eg86starlook");
+        // Add your mail Id and Password. It is because gmail will not allow the unsecured app to operate your account without permission. 
+        sender = new GMailSender("email address", "password");
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.
                 Builder().permitAll().build();
@@ -87,9 +87,9 @@ public class SendActivity extends Activity {
         protected Void doInBackground(Void... mApi) {
             try {
                 // Add subject, Body, your mail Id, and receiver mail Id.
-                sender.sendMail(setTextSubject(), setTextMessage(), "eg8625@gmail.com", setTextTo1());
-                sender.sendMail(setTextSubject(), setTextMessage(), "eg8625@gmail.com", setTextTo2());
-                sender.sendMail(setTextSubject(), setTextMessage(), "eg8625@gmail.com", setTextTo3());
+                sender.sendMail(setTextSubject(), setTextMessage(), "email address", setTextTo1());
+                sender.sendMail(setTextSubject(), setTextMessage(), "email address", setTextTo2());
+                sender.sendMail(setTextSubject(), setTextMessage(), "email address", setTextTo3());
 
             } catch (Exception ex) {
 
@@ -128,9 +128,6 @@ public class SendActivity extends Activity {
         //emailArray[1]=info2;
         //emailArray[2]=info3;
         //myArray[3]="ε=ε=ε=ε=ε=ε=┌(￣◇￣)┘";
-        //"als.mer622@gmail.com"
-        //"leoqaz12@yahoo.com.tw"
-        //"yuwenpan0531@gmail.com"
         //int idd = new Random().nextInt(emailArray.length);
         //String random2 = (emailArray[idd]);
         textTo = info1;
